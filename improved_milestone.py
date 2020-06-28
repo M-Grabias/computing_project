@@ -112,19 +112,19 @@ if __name__ == "__main__":
     im1 = ax1.imshow(Lattice, cmap=cmap, interpolation='nearest')
     ax1.yaxis.set_major_locator(plt.NullLocator())
     ax1.xaxis.set_major_formatter(plt.NullFormatter())
-    plt.xlabel('MC steps = 0', fontsize='20')
+    ax1.set_xlabel('MC steps = 0', fontsize='20')
     
+
 
     ax2 = fig.add_subplot(spec[0, -1])   # add animated plot showing how the lattice changes
     im2 = ax2.imshow(Lattice, cmap=cmap,  interpolation='nearest')
+    ax2.yaxis.set_major_locator(plt.NullLocator())
+    ax2.xaxis.set_major_formatter(plt.NullFormatter())
+
 
     interval = 200 #delay between frames in ms
     anim = animation.FuncAnimation(fig, animation_update, interval=interval, fargs = [N, J, B, Lattice, im2, ax2])
 
-    ax2.yaxis.set_major_locator(plt.NullLocator())
-    ax2.xaxis.set_major_formatter(plt.NullFormatter())
-
-    
     plt.show()
 
 
