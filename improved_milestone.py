@@ -76,7 +76,8 @@ def animation_update(frame, N, J, B, lattice, image, axis):
     if frame == 0:
 
         image.set_data(lattice)
-        plt.xlabel('MC steps = 0', fontsize='20')
+        axis.set_xlabel('MC steps = 0', fontsize='20')
+
 
     else:
 
